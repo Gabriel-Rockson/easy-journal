@@ -1,6 +1,10 @@
 from .base import *
 
-DEBUG = True
+
+# Development secret key
+SECRET_KEY = env('SECRET_KEY')
+
+DEBUG = env('DEBUG')
 
 ALLOWED_HOSTS = ["*"]
 
@@ -14,11 +18,11 @@ INSTALLED_APPS += [
 # Database Settings for development
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'easyjournal_db',
-        'USER': 'rocksongabriel',
-        'PASSWORD': 'iamthedarkbotBORNin1999',
-        'HOST': 'localhost',
-        'PORT': 5432,
+        'ENGINE': env('DB_ENGINE'),
+        'NAME': env('DB_NAME'),
+        'USER': env('DB_USER'),
+        'PASSWORD': env('DB_PASSWORD'),
+        'HOST': env('DB_HOST'),
+        'PORT': env('DB_PORT'),
     }
 }
