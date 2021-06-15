@@ -10,6 +10,7 @@ psycopg2-binary = "*"
 django-extensions = "*"
 django-environ = "*"
 django-livereload-server = "*"
+django-allauth = "*"
 
 [dev-packages]
 
