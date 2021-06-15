@@ -1,5 +1,6 @@
 from pathlib import Path
 import os
+from django.urls.base import reverse_lazy
 
 import environ
 env = environ.Env(
@@ -138,3 +139,5 @@ ACCOUNT_USER_MODEL_USERNAME_FIELD=None
 
 # backend email setting
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+LOGIN_REDIRECT_URL = reverse_lazy("user:user-profile")
