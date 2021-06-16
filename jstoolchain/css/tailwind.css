@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* custom utils */
+.form-input-1 {
+    @apply p-2 focus:outline-none border-2 focus:border-purple-600;
+}
+
+.form-label-1 {
+    @apply text-lg my-1 font-bold text-gray-800;
+}

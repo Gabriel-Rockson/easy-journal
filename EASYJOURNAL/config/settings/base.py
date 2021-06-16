@@ -136,6 +136,8 @@ ACCOUNT_EMAIL_REQUIRED=True
 ACCOUNT_USERNAME_REQUIRED=False
 ACCOUNT_USER_MODEL_USERNAME_FIELD=None
 # ACCOUNT_EMAIL_VERIFICATION="none" # remove this setting so the user can get the verification email
+ACCOUNT_SESSION_REMEMBER=True
+ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE=False
 
 # backend email setting
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

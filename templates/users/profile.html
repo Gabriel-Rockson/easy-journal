@@ -1,8 +1,12 @@
 {% extends 'users/base.html' %}
+{% load account %}
+{% user_display user %}
 
 {% block title %}User Profile{% endblock title %}
 
 
 {% block content %}
     <h1>User Profile</h1>
+
+    {{ user }}
 {% endblock content %}

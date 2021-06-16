@@ -31831,6 +31831,36 @@ video {
   --tw-backdrop-sepia: sepia(100%);
 }
 
+/* custom utils */
+
+.form-input-1:focus {
+  --tw-border-opacity: 1;
+  border-color: rgba(124, 58, 237, var(--tw-border-opacity));
+}
+
+.form-input-1 {
+  border-width: 2px;
+}
+
+.form-input-1:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.form-input-1 {
+  padding: 0.5rem;
+}
+
+.form-label-1 {
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  --tw-text-opacity: 1;
+  color: rgba(31, 41, 55, var(--tw-text-opacity));
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
