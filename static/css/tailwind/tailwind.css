@@ -31856,6 +31856,21 @@ video {
   padding: 0.5rem;
 }
 
+.form-input-error-1 {
+  --tw-border-opacity: 1;
+  border-color: rgba(220, 38, 38, var(--tw-border-opacity));
+  border-width: 2px;
+}
+
+.form-input-error-1:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.form-input-error-1 {
+  padding: 0.5rem;
+}
+
 .form-label-1 {
   font-weight: 700;
   font-size: 1.125rem;

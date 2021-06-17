@@ -1,40 +1,88 @@
-{% extends "account/base.html" %}
-
-{% load i18n %}
-
-{% block title %}{% trans "Signup" %}{% endblock %}
+{% extends "account/base.html" %} 
+{% load i18n %} 
+{% block title %}{% trans "Signup" %}{% endblock %} 
 
 {% block content %}
-{% comment %} <h1>{% trans "Sign Up" %}</h1> {% endcomment %}
-
-{% comment %} <p>{% blocktrans %}<a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p> {% endcomment %}
-
 
 <div class="flex justify-center mt-11" id="signup_box">
-    <div class="w-4/5 md:w-1/2 lg:w-96 p-8 bg-gray-100 shadow-lg">
-        <form action="" method="POST" id="signup_form" action="{% url 'account_signup' %}">
-            <h1 class="text-4xl font-extrabold text-center my-2">Join EasyJournal</h1>
-            {% csrf_token %}
-            <!-- email address form group -->
-            <div class="flex flex-col my-2">
-                <label for="id_email" class="form-label-1">E-mail Address</label>
-                <input autocomplete="email" id="id_email" name="email" placeholder="E-mail address" required="" type="email" class="form-input-1"/>
-            </div>
-            <!-- password form group -->
-            <div class="flex flex-col my-2">
-                <label for="id_password1" class="form-label-1">Password</label>
-                <input autocomplete="new-password" id="id_password1" name="password1" placeholder="Password" required="" type="password" class="form-input-1"/>
-            </div>
-            <!-- redirection -->
-            {% if redirect_field_value %}
-                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
-            {% endif %}
-            <!-- submission button -->
-            <div class="mt-5">
-                <button type="submit" class="px-4 py-2 hover:bg-green-700 bg-green-600 hover:shadow-lg text-white font-bold">Create Account</button>
-            </div>
-        </form>
-    </div>
+  <div class="w-4/5 md:w-1/2 lg:w-96 p-8 bg-gray-100 shadow-lg">
+    <form
+      action=""
+      method="POST"
+      id="signup_form"
+      action="{% url 'account_signup' %}"
+    >
+      <h1 class="text-4xl text-gray-800 font-extrabold text-center my-2">Join EasyJournal</h1>
+      {% csrf_token %}
+
+      <!-- Non field errors -->
+      <div class="my-2">
+        {% if form.non_field_errors %}
+          {% for error in form.non_field_errors %}
+            <small class="text-red-600">{{ error }}</small>
+          {% endfor %}
+        {% endif %}
+      </div>
+
+      <!-- email address form group -->
+      <div class="flex flex-col my-2">
+        <label for="id_email" class="form-label-1">E-mail Address</label>
+        <input
+          autocomplete="email"
+          id="id_email"
+          name="email"
+          placeholder="E-mail address"
+          required=""
+          type="email"
+          class="form-input-1 {% if form.email.errors %}form-input-error-1{% endif %} "
+        />
+        {% for error in form.email.errors %}
+        <small class="text-red-600">{{ error }}</small> <br />
+        {% endfor %}
+      </div>
+      <!-- password form group -->
+      <div class="flex flex-col my-2">
+        <label for="id_password1" class="form-label-1">Password</label>
+        <input
+          autocomplete="new-password"
+          id="id_password1"
+          name="password1"
+          placeholder="Password"
+          required=""
+          type="password"
+          class="form-input-1 {% if form.password1.errors %}form-input-error-1{% endif %}"
+        />
+        {% for error in form.password1.errors %}
+        <small class="text-red-600">{{ error }}</small> <br />
+        {% endfor %}
+      </div>
+      <!-- redirection -->
+      {% if redirect_field_value %}
+        <input
+          type="hidden"
+          name="{{ redirect_field_name }}"
+          value="{{ redirect_field_value }}"
+        />
+      {% endif %}
+      <!-- submission button -->
+      <div class="mt-5">
+        <button
+          type="submit"
+          class="
+            px-4
+            py-2
+            hover:bg-green-700
+            bg-green-600
+            hover:shadow-lg
+            text-white
+            font-bold
+          "
+        >
+          Create Account
+        </button>
+      </div>
+    </form>
+  </div>
 </div>
 
 {% endblock content %}
