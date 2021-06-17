@@ -31833,6 +31833,11 @@ video {
 
 /* custom utils */
 
+.form-input-1 {
+  --tw-border-opacity: 1;
+  border-color: rgba(167, 139, 250, var(--tw-border-opacity));
+}
+
 .form-input-1:focus {
   --tw-border-opacity: 1;
   border-color: rgba(124, 58, 237, var(--tw-border-opacity));

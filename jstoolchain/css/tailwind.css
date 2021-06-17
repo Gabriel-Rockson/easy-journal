@@ -5,7 +5,7 @@
 
 /* custom utils */
 .form-input-1 {
-    @apply p-2 focus:outline-none border-2 focus:border-purple-600;
+    @apply p-2 focus:outline-none border-2 border-purple-400 focus:border-purple-600;
 }
 
 .form-label-1 {
