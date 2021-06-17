@@ -7,40 +7,38 @@
 
 {% block content %}
 
-<h1>{% trans "Sign In" %}</h1>
-
-{% get_providers as socialaccount_providers %}
-
-{% if socialaccount_providers %}
-<p>{% blocktrans with site.name as site_name %}Please sign in with one
-of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a>
-for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
-
-<div class="socialaccount_ballot">
-
-  <ul class="socialaccount_providers">
-    {% include "socialaccount/snippets/provider_list.html" with process="login" %}
-  </ul>
-
-  <div class="login-or">{% trans 'or' %}</div>
-
+<div class="flex justify-center mt-11" id="signup_box">
+	<div class="w-4/5 md:w-1/2 lg:w-96 p-8 bg-gray-100 shadow-lg">
+		<form class="login" method="POST" action="{% url 'account_login' %}">
+			<h1 class="text-4xl font-extrabold text-center py-3">Welcome Back to EasyJournal</h1>
+			{% csrf_token %}
+			<!-- Non field errors -->
+			<!-- TODO - render form errors -->
+			<!-- email address form group -->
+			<div class="flex flex-col my-2">
+				<label for="id_email" class="form-label-1">E-mail Address</label>
+				<input autocomplete="email" id="id_login" name="login" placeholder="E-mail address" required=""
+					type="email" class="form-input-1" />
+			</div>
+			<!-- password form group -->
+			<div class="flex flex-col my-2">
+				<label for="id_password1" class="form-label-1 flex justify-between"><span>Password</span><span
+						class="text-base text-red-600 font-medium"><a class=""
+							href="{% url 'account_reset_password' %}">{% trans "Forgotten?" %}</a></span></label>
+				<input autocomplete="current-password" id="id_password" name="password" placeholder="Password"
+					required="" type="password" class="form-input-1" />
+			</div>
+			<!-- redirection -->
+			{% if redirect_field_value %}
+			<input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+			{% endif %}
+			<!-- submission button -->
+			<div class="mt-5">
+				<button type="submit"
+					class="px-4 py-2 hover:bg-blue-700 bg-blue-600 hover:shadow-lg text-white font-bold">Login</button>
+			</div>
+		</form>
+	</div>
 </div>
-
-{% include "socialaccount/snippets/login_extra.html" %}
-
-{% else %}
-<p>{% blocktrans %}If you have not created an account yet, then please
-<a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
-{% endif %}
-
-<form class="login" method="POST" action="{% url 'account_login' %}">
-  {% csrf_token %}
-  {{ form.as_p }}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %}
-  <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
-  <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
-</form>
 
 {% endblock %}
