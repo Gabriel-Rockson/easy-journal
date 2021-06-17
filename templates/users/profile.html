@@ -6,7 +6,13 @@
 
 
 {% block content %}
+    <div>
+
     <h1>User Profile</h1>
 
-    {{ user }}
+    {{ user }} 
+
+    </div>
+
+    <div> <a href="{% url 'account_logout' %}" class="bg-red-600 p-6 no-underline">LOGOUT</a></div>
 {% endblock content %}
