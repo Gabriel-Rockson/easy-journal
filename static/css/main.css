@@ -18,6 +18,12 @@ main {
     display: block;
     padding: 0.75rem;
     transition: all 0.7s;
+    font-weight: 500;
+}
+
+.nav-items a i {
+    font-size: 1rem;
+    color: rgba(187, 31, 187, 0.842);
 }
 
 .nav-items a:hover {
