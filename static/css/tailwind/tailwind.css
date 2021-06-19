@@ -31962,6 +31962,20 @@ video {
   color: rgba(0, 0, 0, var(--tw-text-opacity));
 }
 
+.link-1 {
+  display: block;
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgba(30, 64, 175, var(--tw-text-opacity));
+}
+
+.link-1:hover {
+  --tw-text-opacity: 1;
+  color: rgba(29, 78, 216, var(--tw-text-opacity));
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;

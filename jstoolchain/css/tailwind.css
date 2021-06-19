@@ -30,3 +30,7 @@
 .acc-nav-link {
     @apply text-gray-600 hover:text-black font-bold;
 }
+
+.link-1 {
+    @apply text-lg text-blue-800 hover:text-blue-700 block font-bold;
+}
