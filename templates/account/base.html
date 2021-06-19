@@ -14,21 +14,21 @@
     <!-- Navbar of the authentication templates  -->
     <nav class="bg-white border-b-2 border-gray-200 shadow-sm">
         <!-- Outer container of the navbar -->
-        <div class="flex justify-between px-12 py-3">
+        <div class="flex justify-between px-12 lg:px-32 py-3">
             <!-- Inner containers of the navbar-->
             <div class="flex items-center">
                 <!-- logo -->
-                <div class="mr-5"><span class="font-medium text-red-700">easy</span><span class="font-bold text-blue-900">Journal</span></div>
+                <div class="text-2xl mr-5"><span class="font-medium text-red-700">easy</span><span class="font-bold text-blue-900">Journal</span></div>
                 <!-- primary nav -->
                 <div class="space-x-2">
-                    <a href="#" class="text-gray-600 hover:text-black font-bold">Home</a>
-                    <a href="#" class="text-gray-600 hover:text-black font-bold">About</a>
+                    <a href="#" class="acc-nav-link">home</a>
+                    <a href="#" class="acc-nav-link">about</a>
                 </div>
             </div>
             <!-- secondary nav-->
             <div class="items-center space-x-3">
-                <a href="{% url 'account_login' %}" class="text-gray-600 hover:text-black font-bold">Login</a>
-                <a href="{% url 'account_signup' %}" class="text-gray-600 hover:text-black font-bold">Signup</a>
+                <a href="{% url 'account_login' %}" class="acc-nav-link">login</a>
+                <a href="{% url 'account_signup' %}" class="text-xl text-purple-500 hover:text-purple-700 font-bold">signup</a>
             </div>
         </div>
     </nav>
