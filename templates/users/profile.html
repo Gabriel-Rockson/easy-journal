@@ -6,13 +6,25 @@
 
 
 {% block content %}
-    <div>
 
-    <h1>User Profile</h1>
+    <div class="flex flex-col px-32">
 
-    {{ user }} 
+        {% if messages %}
+            <div>
+                {% for message in message %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
 
+        <div>
+            <h1 class="text-bold text-2xl">Profile</h1>
+            <p>email: {{ user.email }}</p>
+        </div>
+
+        <a href="{% url 'account_logout' %}" class="bg-red-600 px-8 py-2 font-bold text-white mt-auto">LOGOUT</a>
     </div>
 
-    <div> <a href="{% url 'account_logout' %}" class="bg-red-600 p-6 no-underline">LOGOUT</a></div>
+    <div>
+
 {% endblock content %}
