@@ -25,6 +25,7 @@ class Journal(models.Model):
 
     class Meta:
         ordering = ["-created"]
+        verbose_name_plural = "Journals"
 
 
 class Entry(models.Model):
@@ -42,3 +43,4 @@ class Entry(models.Model):
 
     class Meta:
         ordering = ["-created"]
+        verbose_name_plural = "Entries"
