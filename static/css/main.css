@@ -34,3 +34,7 @@ main {
 .mobile-nav {
     display:  none;
 }
+
+.profile-btn {
+    transition: all 0.7s linear;
+}

@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     # project apps
     'users.apps.UsersConfig',
     'home.apps.HomeConfig',
+    'journal.apps.JournalConfig',
 ]
 
 MIDDLEWARE = [
