@@ -1,0 +1,57 @@
+{% extends 'dashboard/base.html' %}
+
+{% block title %}Add new journal{% endblock title %}
+
+
+{% block content %}
+
+    <div class="flex justify-around" style="height: 80vh;">
+        <div class="4/5 lg:w-3/5 self-center">
+            <h1 class="text-3xl font-bold py-5 mt-3 text-center">Create a New Journal</h1>
+
+            <div>
+                {% if form.errors %}
+                    <p>{{ form.errors }}</p>
+                {% endif %}
+            </div>
+
+            <form method="POST" action="{% url 'journal:create-journal' %}">
+                {% csrf_token %}
+                <!-- Name of Journal -->
+                <div class="flex flex-col my-4">
+                    <label for="id_name" class="form-label-2">Name of Journal:</label> 
+                    <input id="id_name" maxlength="50" name="name" required="" type="text" class="form-input-2 font-bold"/> 
+                    <span class="form-helptext-1">Enter the name you would like to give to your journal.</span>
+                </div>
+                
+                <!-- About of journal -->
+                <div class="flex flex-col my-4">
+                    <label for="id_description" class="form-label-2">Description:</label> 
+                    <textarea cols="40" id="id_description" maxlength="100" name="description" rows="4" class="border-2 border-purple-600 focus:outline-none p-5"></textarea> 
+                    <span class="form-helptext-1">What is this journal about?</span>
+                </div>
+
+               <div class="flex flex-row space-x-4 my-4">
+                    <!-- Background Color Picker of Journal -->
+                    <div class="flex-1 flex flex-col">
+                        <label for="id_background_color" class="form-label-2">Background Color:</label> 
+                        <input id="id_background_color" maxlength="10" name="background_color" required="" type="text" class="form-input-2"/> 
+                        <span class="form-helptext-1">Color to give to the background of the journal</span>
+                    </div>
+
+                    <!-- Text Color Picker of Journal -->
+                    <div class="flex-1 flex flex-col">
+                        <label for="id_text_color" class="form-label-2">Text Color:</label> 
+                        <input id="id_text_color" maxlength="10" name="text_color" required="" type="text" class="form-input-2"/> 
+                        <span class="form-helptext-1">color to give the text</span>
+                    </div>
+               </div>
+    
+               <div>
+                   <button type="submit" class="px-4 font-bold py-3 bg-green-700 hover:bg-green-800 rounded-md text-white">Make Journal</button>
+               </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock content %}

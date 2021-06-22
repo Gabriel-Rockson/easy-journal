@@ -22,7 +22,8 @@
             <p>email: {{ user.email }}</p>
         </div>
 
-        <a href="{% url 'account_logout' %}" class="link-1">LOGOUT</a>
+        <a href="{% url 'account_logout' %}" class="link-1">LOGOUT</a> <br />
+        <a href="{% url 'journal:create-journal' %}" class="link-1">Make Journal</a>
     </div>
 
     <div>

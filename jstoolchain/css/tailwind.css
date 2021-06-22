@@ -34,3 +34,16 @@
 .link-1 {
     @apply text-lg text-blue-800 hover:text-blue-700 block font-bold;
 }
+
+/* utilities used on the journal create */
+.form-label-2 {
+    @apply text-gray-800 text-xl font-bold pb-2;
+}
+
+.form-input-2 {
+    @apply p-3 border-2 border-purple-600 focus:outline-none text-black text-lg;
+}
+
+.form-helptext-1 {
+    @apply text-sm text-blue-600;
+}
