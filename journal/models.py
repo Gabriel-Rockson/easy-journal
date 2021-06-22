@@ -14,9 +14,9 @@ class Journal(models.Model):
     description = models.TextField(_("Description"), max_length=100, help_text=_(
         "What is this journal about?"), null=True, blank=True)
     created = models.DateTimeField(auto_now_add=True)
-    background_color = models.CharField(max_length=10, help_text=_(
+    background_color = models.CharField(_("Background Color"), max_length=10, help_text=_(
         "Color to give to the background of the journal"))
-    text_color = models.CharField(
+    text_color = models.CharField(_("Text Color"),
         max_length=10, help_text=_("color to give the text"))
 
     def __str__(self):
