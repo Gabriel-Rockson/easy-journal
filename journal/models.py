@@ -3,6 +3,7 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django.urls import reverse
 from django.utils.text import slugify
+from django.utils import timezone
 
 User = settings.AUTH_USER_MODEL
 
@@ -16,7 +17,7 @@ class Journal(models.Model):
     slug = models.SlugField(max_length=50, default="", unique=True)
     description = models.TextField(_("Description"), max_length=100, help_text=_(
         "What is this journal about?"), null=True, blank=True)
-    created = models.DateTimeField(auto_now_add=True)
+    created = models.DateTimeField(default=timezone.now)
     background_color = models.CharField(_("Background Color"), max_length=10, help_text=_(
         "Color to give to the background of the journal"))
     text_color = models.CharField(_("Text Color"),

@@ -1,0 +1,20 @@
+{% extends 'dashboard/base.html' %}
+
+{% block title %}All Journals{% endblock %}
+
+
+{% block content %}
+
+<div>
+
+    <h1 class="text-black text-center font-bold text-2xl">Your Journals</h1>
+
+    {% for journal in journals %}
+        <div>
+            <h1 class="text-pink-600 text-lg"><a href="{{ journal.get_absolute_url }}">{{ journal.name }}</a></h1>
+        </div>
+    {% endfor %}
+
+</div>
+
+{% endblock content %}

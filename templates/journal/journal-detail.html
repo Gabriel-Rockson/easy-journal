@@ -1,0 +1,13 @@
+{% extends 'dashboard/base.html' %}
+
+{% block title %}{{ journal.name }}{% endblock title %}
+
+
+{% block content %}
+
+<div>
+    <h1 class="font-bold text-3xl">{{ journal.name }}</h1>
+    {{ journal.created }}
+</div>
+
+{% endblock content %}
