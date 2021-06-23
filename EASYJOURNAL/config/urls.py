@@ -8,5 +8,5 @@ urlpatterns = [
     # other apps paths
     path('', include('home.urls', namespace="home")),
     path('user/', include('users.urls', namespace="user")),
-    path('journal/', include('journal.urls', namespace="journal")),
+    path('journals/', include('journal.urls', namespace="journal")),
 ]
