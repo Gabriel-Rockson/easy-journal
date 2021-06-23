@@ -1,6 +1,8 @@
 from django.conf import settings
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+from django.urls import reverse
+from django.utils.text import slugify
 
 User = settings.AUTH_USER_MODEL
 
@@ -11,6 +13,7 @@ class Journal(models.Model):
         User, on_delete=models.CASCADE, null=False, blank=False, related_name="journals")
     name = models.CharField(_("Name of Journal"), max_length=50, help_text=_(
         "Enter the name you would like to give to your journal."), null=False, blank=False)
+    slug = models.SlugField(max_length=50, default="", unique=True)
     description = models.TextField(_("Description"), max_length=100, help_text=_(
         "What is this journal about?"), null=True, blank=True)
     created = models.DateTimeField(auto_now_add=True)
@@ -22,6 +25,13 @@ class Journal(models.Model):
     def __str__(self):
         return self.name
 
+    def get_absolute_url(self):
+        return reverse("journal:journal-detail", kwargs={"slug": self.slug})
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(f"{self.name}-{self.created}")
+        return super().save(*args, **kwargs)
 
     class Meta:
         ordering = ["-created"]
