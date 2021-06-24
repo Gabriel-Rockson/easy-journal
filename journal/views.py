@@ -1,4 +1,4 @@
-from django.views.generic.edit import UpdateView
+from django.views.generic.edit import DeleteView, UpdateView
 from journal.models import Journal
 from django.http import request
 from django.shortcuts import render
@@ -37,11 +37,22 @@ class JournalDetailView(LoginRequiredMixin, DetailView):
 
 class JournalUpdateView(LoginRequiredMixin, UpdateView):
     """view to update a particular journal"""
-    queryset = Journal.objects.all()
+    model = Journal
     context_object_name = "journal"
     template_name = "journal/update-journal.html"
     form_class = JournalCreateUpdateForm
     success_url = reverse_lazy("journal:list-journals")
 
 
+class JournalDeleteView(LoginRequiredMixin, DeleteView):
+    model = Journal
+    context_object_name = "journal"
+    success_url = reverse_lazy("journal:list-journals")
+
+    def get(self, request, *args, **kwargs):
+        """ delete the journal object on a get request """
+        return self.delete(request, *args, **kwargs)
+
+
 # TODO - make the success_url of the create and update fields go to the individual journal page
+# TODO - when the delete journal is clicked, bring a pop up modal for the user to confirm deletion, before you hit this endpoint

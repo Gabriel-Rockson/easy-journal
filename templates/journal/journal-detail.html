@@ -9,7 +9,9 @@
     <h1 class="font-bold text-3xl">{{ journal.name }}</h1>
     {{ journal.created }} <br />
 
-    <a class="text-red-600 font-bold text-xl" href="{% url 'journal:update-journal' journal.slug %}">Update Journal</a>
+    <a class="text-green-600 font-bold text-xl" href="{% url 'journal:update-journal' journal.slug %}">Update Journal</a> <br />
+
+    <a class="text-red-600 font-bold text-xl" href="{% url 'journal:delete-journal' journal.slug %}">Delete Journal</a>
 </div>
 
 {% endblock content %}
