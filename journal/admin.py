@@ -5,6 +5,7 @@ from entry.models import Entry
 
 class EntryInline(admin.TabularInline):
     model = Entry
+    extra = 1
 
 
 @admin.register(Journal)

@@ -4,9 +4,82 @@
 
 
 {% block content %}
+    <div class="flex justify-around" style="min-height: 80vh;">
+        <div class="w-4/5 lg:w-3/5 self-center">
+            <h1 class="text-3xl font-bold py-5 mt-7 text-center">Update - {{ journal.name }}</h1>
 
-<div>
-    <h1 class="text-red-800 text-4xl text-center font-extrabold">{{ journal.name }}</h1>
-</div>
+            <div>
+                {% if form.errors %}
+                    <p>{{ form.errors }}</p>
+                {% endif %}
+            </div>
+
+            <form method="POST">
+                {% csrf_token %}
+                <!-- Name of Journal -->
+                <div class="flex flex-col my-4">
+                    <label for="id_name" class="form-label-2">Name of Journal:</label> 
+                    <input id="id_name" maxlength="50" name="name" required="" type="text" class="form-input-2 font-bold" value="{{ journal.name }}"/> 
+                    <span class="form-helptext-1">Enter the name you would like to give to your journal.</span>
+                </div>
+                
+                {% comment %} <!-- About of journal -->
+                <div class="flex flex-col my-4">
+                    <label for="id_description" class="form-label-2">Description:</label> 
+                    <textarea cols="40" id="id_description" maxlength="100" name="description" rows="2" class="border-2 border-purple-600 focus:outline-none p-3">{{ journal.description }}</textarea> 
+                    <span class="form-helptext-1">What is this journal about?</span>
+                </div>
+                {% endcomment %}
+
+               <div class="flex flex-col md:flex-row lg:flex-row md:space-x-4 my-4 bg-gray-300 p-5 rounded-md shadow-xl">
+                    <!-- Background Color Picker of Journal -->
+                    <div class="flex-1 flex flex-col">
+                        <label for="id_background_color" class="form-label-2">Background Color:</label> 
+                        <input id="id_background_color" maxlength="10" name="background_color" required="" type="text" class="form-input-2" style="display: none;"/> 
+                        <input type="color" name="" class="h-12 w-full border-2 border-purple-600" id="id_background_color_picker" value="{{ journal.background_color">
+                        <span class="form-helptext-1">journal background color</span>
+                    </div>
+
+                    <!-- Text Color Picker of Journal -->
+                    <div class="flex-1 flex flex-col">
+                        <label for="id_text_color" class="form-label-2">Text Color:</label> 
+                        <input id="id_text_color" maxlength="10"  name="text_color" required="" type="text" class="form-input-2" style="display: none;"/> 
+                        <input type="color" class="h-12 w-full border-2 border-purple-600" name="" id="id_text_color_picker" value="{{ journal.text_color }}">
+                        <span class="form-helptext-1">journal name text color</span>
+                    </div>
+               </div>
+
+               <div>
+                   <button type="submit" class="px-4 font-bold py-3 bg-green-700 hover:bg-green-800 rounded-md text-white">Update Journal</button>
+               </div>
+            </form>
+        </div>
+    </div>
 
 {% endblock content %}
+
+
+{% block extra_js %}
+
+<script>
+    bgColorPicker = document.getElementById("id_background_color_picker");
+    textColorPicker = document.getElementById("id_text_color_picker");
+    
+    bgColorInput = document.getElementById("id_background_color");
+    textColorInput = document.getElementById("id_text_color");
+
+    bgColorPicker.addEventListener("input", updateBgColor, false);
+    textColorPicker.addEventListener("change", updateTextColor, false); 
+
+    function updateBgColor() {
+        bgColorInput.value = bgColorPicker.value;
+    }
+
+    function updateTextColor() {
+        textColorInput.value = textColorPicker.value;
+    }
+</script>
+
+{% endblock extra_js %}
+
+<!-- TODO - make sure that the update form works on a custom designed form -->
