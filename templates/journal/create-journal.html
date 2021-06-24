@@ -31,12 +31,12 @@
                     <span class="form-helptext-1">What is this journal about?</span>
                 </div>
 
-               <div class="flex flex-col md:flex-row lg:flex-row md:space-x-4 my-4">
+               <div class="flex flex-col md:flex-row lg:flex-row md:space-x-4 my-4 bg-gray-300 p-5 rounded-md shadow-xl">
                     <!-- Background Color Picker of Journal -->
                     <div class="flex-1 flex flex-col">
                         <label for="id_background_color" class="form-label-2">Background Color:</label> 
                         <input id="id_background_color" maxlength="10" name="background_color" required="" type="text" class="form-input-2" style="display: none;"/> 
-                        <input type="color" name="" class="h-12 w-full border-2 border-purple-600" id="id_background_color_picker">
+                        <input type="color" name="" class="h-12 w-full border-2 border-purple-600" id="id_background_color_picker" value="#000000">
                         <span class="form-helptext-1">journal background color</span>
                     </div>
 
@@ -44,7 +44,7 @@
                     <div class="flex-1 flex flex-col">
                         <label for="id_text_color" class="form-label-2">Text Color:</label> 
                         <input id="id_text_color" maxlength="10"  name="text_color" required="" type="text" class="form-input-2" style="display: none;"/> 
-                        <input type="color" class="h-12 w-full border-2 border-purple-600" name="" id="id_text_color_picker">
+                        <input type="color" class="h-12 w-full border-2 border-purple-600" name="" id="id_text_color_picker" value="#ffffff">
                         <span class="form-helptext-1">journal name text color</span>
                     </div>
                </div>
