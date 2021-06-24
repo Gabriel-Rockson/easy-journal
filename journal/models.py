@@ -38,20 +38,3 @@ class Journal(models.Model):
         ordering = ["-created"]
         verbose_name_plural = "Journals"
 
-
-class Entry(models.Model):
-    """Model for representing a journal's entry"""
-    journal = models.ForeignKey("journal.Journal", on_delete=models.CASCADE,
-                                null=False, blank=False, related_name="entries")
-    text = models.TextField(null=False, blank=False,
-                            help_text=_("Pour out your heart here"))
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
-
-    def __str__(self):
-        return f"{self.journal} entry on {self.created}"
-
-
-    class Meta:
-        ordering = ["-created"]
-        verbose_name_plural = "Entries"

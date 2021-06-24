@@ -1,12 +1,13 @@
-from django.views.generic.edit import DeleteView, UpdateView
-from journal.models import Journal
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import request
 from django.shortcuts import render
-from .forms import JournalCreateUpdateForm
-from django.views.generic import CreateView, ListView, DetailView
 from django.urls import reverse_lazy
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic import CreateView, DetailView, ListView
+from django.views.generic.edit import DeleteView, UpdateView
 
+from journal.models import Journal
+
+from .forms import JournalCreateUpdateForm
 
 
 class JournalListView(LoginRequiredMixin, ListView):

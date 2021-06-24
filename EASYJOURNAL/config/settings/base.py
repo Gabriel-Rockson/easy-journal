@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'home.apps.HomeConfig',
     'journal.apps.JournalConfig',
+    'entry.apps.EntryConfig',
 ]
 
 MIDDLEWARE = [

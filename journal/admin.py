@@ -1,5 +1,6 @@
 from django.contrib import admin
-from journal.models import Journal, Entry
+from journal.models import Journal
+from entry.models import Entry
 
 
 class EntryInline(admin.TabularInline):
