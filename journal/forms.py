@@ -3,8 +3,8 @@ from django.forms import fields
 from .models import Journal
 
 
-class JournalCreateForm(forms.ModelForm):
-    """Model form to handle creation of a new journal object"""
+class JournalCreateUpdateForm(forms.ModelForm):
+    """Model to create or update a journal object"""
 
     class Meta:
         model = Journal
