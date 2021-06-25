@@ -5,82 +5,80 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/tailwind/tailwind.css' %}">
-    <link rel="stylesheet" href="{% static 'icons/fontawesome/all.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
-    <title>{% block title %}Dashboard{% endblock title %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/tailwind/tailwind.css' %}" />
+    <title>{% block title %}Dashboard - {% endblock %}</title>
+    <style>
+        ul li {
+            font-size: 1.2rem; 
+            padding: 0.2rem 0;
+            font-weight: 600;
+            color: blue;
+        }
+
+        ul li:hover {
+            background-color: black;
+            color: white;
+            padding-left: 0.4rem;
+        }
+    </style>
 </head>
 <body>
-    
-    <nav id="side-navbar" class="bg-gray-900 font-mono">
-        <!-- Large screen navigation-->
-        <div class="flex flex-col large-screen-nav" style="height: 100vh">
-            <!-- Logo -->
-            <p class="font-extrabold text-center text-2xl text-gray-200 py-2 bg-gray-900 font-serif">EasyJournal</p>
-            <hr>
 
-            <!-- Menu Items -->
-            <div class="my-5 text-white">
-                <h1 class="font-sans font-bold text-gray-300 text-xl text-center py-2"><i class="fas fa-book"></i>  My Journals</h1>
-
-                <ul class="nav-items text-sm text-left">
-                    <a href="#"><i class="fas fa-book-open"></i> Journal One</a>
-                    <a href="#"><i class="fas fa-book-open"></i> Journal Two</a>
-                    <a href="#"> <i class="fas fa-book-open"></i> Journal Three</a>
-                    <a href="#"><i class="fas fa-book-open"></i> Journal Four</a>
-                    <a href="#"><i class="fas fa-book-open"></i> Journal Five</a>
-                </ul>
-
-                <div class="mb-5">
-                    <p class="text-center text-3xl font-bold">...</p>
-                    <a href="#" class="text-center text-blue-600 hover:text-blue-800 block py-1">View All Journals</a>
-                </div>
-
-                <div class="flex justify-around mt-1">
-                    <a href="{% url 'journal:create-journal' %}" class="bg-purple-600 hover:bg-purple-700 px-2 text-sm py-2 rounded-md"><i class="fas fa-plus    "></i> Add New Journal</a>
-                </div>
+    <!--
+        top navigation bar
+        side navigation bar
+        the work area
+    -->
+    <!-- This is the top navigation of the dashboard -->
+    <nav class="bg-gray-100 shadow-md py-4">
+        <div class="flex justify-between px-44">
+            <!-- Primary navigation -->
+            <div>
+                <!-- Logo label -->
+                <label class="text-xl font-bold text-red-600">EasyJournal</label>
             </div>
-
-            <a href="" class="mt-auto w-full bg-black hover:bg-gray-300 hover:text-black font-mono text-center font-bold text-white py-2 text-xl profile-btn">Profile</a>
+            <!-- Secondaary navigation -->
+            <div>
+                <a href="#" class="align-middle text-gray-800">{{ user.email }}</a>
+            </div>
         </div>
-        
-        <!-- Mobile Navigation -->
-        <ul class="mobile-nav text-white flex justify-around">
-            <li>
-                <i class="fas fa-home"></i>
-                <span>home</span>
-            </li>
-            <li>
-                <i class="fas fa-book"></i>
-                <span>journals</span>
-            </li>
-            <li>
-                <i class="fas fa-plus-circle"></i>
-                <span>add new</span>
-            </li>
-            <li>
-                <i class="fas fa-user-circle"></i>
-                <span>profile</span>
-            </li>
-        </ul>
     </nav>
 
-    <!-- Top navbar and the main content -->
-    <div class="main">
-        <nav class="bg-gray-800 text-white shadow-2xl lg:px-36">
-            <div class="flex justify-end px-4 py-3">
-                <div>
-                    {{ user.email }}
-                </div>
-            </div>
-        </nav>
+    <!-- Contains the side navigation bar and the main work area -->
+    <div class="px-44 mt-3">
 
-        <main class="lg:px-12">
-            {% block content %}{% endblock %}
+        <!-- This is the side navigation bar-->
+        <div class="flex flex-col px-4 border-t-2 border-r-2 gray-900 shadow-md" style="width: 200px; position: fixed; height: 100vh">
+            <a href="#" class="font-bold text-xl pb-3">My Dashboard</a>
+
+            <p class="text-lg text-center font-bold text-gray-800 py-3">My Journals</p>
+            <ul>
+                <li><a href="#">Journal One</a></li>
+                <li><a href="#">Journal Two</a></li>
+                <li><a href="#">Journal Three</a></li>
+                <li><a href="#">Journal Four</a></li>
+                <li><a href="#">Journal Five</a></li>
+            </ul>
+
+            <!-- all journals link -->
+            <a href="#" class="">view all</a>
+
+            <!-- button to add a new journal -->
+            <a href="#" class="font-bold text-lg bg-gray-800 text-white">Add New</a>
+
+            <!-- profile link -->
+            <a href="#" class="mt-auto">Profile</a>
+        </div>
+
+        <!-- This is the main work area -->
+        <main class="bg-blue-500 px-6" style="margin-left: 220px">
+            {% block content %}
+
+            {% endblock content %}
         </main>
     </div>
 
-    {% block extra_js %}{% endblock extra_js %}
+
 
 </body>
 </html>
