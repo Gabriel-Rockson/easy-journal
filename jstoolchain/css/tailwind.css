@@ -48,3 +48,19 @@
 .nav-link-1 {
     @apply text-tiffany-blue hover:text-orange-peel text-xl font-semibold transition delay-150 duration-300 ease-in-out;
 }
+
+
+/* form inputs and labels */
+.label-1 {
+    @apply text-lg py-2 font-semibold text-gray-700;
+}
+
+.input-1 {
+    @apply p-4 border-gray-300 focus:outline-none border-2 text-lg focus:border-rose-madder transition delay-75 duration-100 ease-linear;
+}
+
+
+/* buttons */
+.blue-btn {
+    @apply py-4 w-full bg-blue-700 hover:bg-blue-900 transition delay-75 duration-100 ease-in-out text-xl font-bold text-baby-powder;
+}
