@@ -32843,17 +32843,6 @@ video {
   }
 }
 
-.acc-nav-link {
-  font-weight: 700;
-  --tw-text-opacity: 1;
-  color: rgba(75, 85, 99, var(--tw-text-opacity));
-}
-
-.acc-nav-link:hover {
-  --tw-text-opacity: 1;
-  color: rgba(0, 0, 0, var(--tw-text-opacity));
-}
-
 .link-1 {
   display: block;
   font-weight: 700;
@@ -32906,6 +32895,32 @@ video {
   line-height: 1.25rem;
   --tw-text-opacity: 1;
   color: rgba(37, 99, 235, var(--tw-text-opacity));
+}
+
+/* navigation links */
+
+.nav-link-1 {
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgba(46, 196, 182, var(--tw-text-opacity));
+}
+
+.nav-link-1:hover {
+  --tw-text-opacity: 1;
+  color: rgba(255, 159, 28, var(--tw-text-opacity));
+}
+
+.nav-link-1 {
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+  transition-delay: 150ms;
 }
 
 @media (min-width: 640px) {

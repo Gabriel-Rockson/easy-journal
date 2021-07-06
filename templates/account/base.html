@@ -21,30 +21,32 @@
 <body style="height: 100vh;" class="flex flex-col">
     
     <!-- Navbar of the authentication templates  -->
-    <nav class="shadow-md font-raleway bg-rich-black-fogra text-white">
+    <nav class="shadow-md font-raleway bg-rich-black-fogra text-baby-powder">
         <!-- Outer container of the navbar -->
         <div class="flex justify-between px-12 lg:px-32 py-4">
             <!-- Inner containers of the navbar-->
-            <div class="flex items-center">
+            <div class="flex items-center md:space-x-10">
                 <!-- logo -->
-                <div class="text-xl md:text-2xl mr-5"><a href="{% url 'home:home' %}"><span class="font-extrabold">easy</span><span class="font-extrabold">JOURNAL</span></a></div>
+                <div class="text-xl md:text-2xl mr-5 text-rose-madder"><a href="{% url 'home:home' %}"><span class="font-extrabold">easy</span><span class="font-extrabold">JOURNAL</span></a></div>
                 <!-- primary nav -->
-                <div class="space-x-2 text-lg">
-                    <a href="#" class="acc-nav-link">home</a>
-                    <a href="#" class="acc-nav-link">about</a>
+                <div class="space-x-2">
+                    <a href="#" class="nav-link-1">home</a>
+                    <a href="#" class="nav-link-1">about</a>
                 </div>
             </div>
             <!-- secondary nav-->
-            <div class="items-center space-x-3 text-lg">
-                <a href="{% url 'account_login' %}" class="acc-nav-link">login</a>
-                <a href="{% url 'account_signup' %}" class="text-xl">signup</a>
+            <div class="items-center space-x-3">
+                <a href="{% url 'account_login' %}" class="nav-link-1">login</a>
+                <a href="{% url 'account_signup' %}" class="bg-orange-peel py-2 px-2 rounded-md text-xl text-black font-bold hover:bg-tiffany-blue transition delay-150 duration-300 ease-in-out">signup</a>
             </div>
         </div>
     </nav>
 
-    {% block content %}
-    
-    {% endblock content %}
+    <div class="font-monserrat">
+        {% block content %}
+        
+        {% endblock content %}
+    </div>
 
     <!-- Footer of the authentication templates -->
     <footer class="bg-gray-800 text-white w-full mt-auto" style="">
