@@ -32923,6 +32923,26 @@ video {
   transition-delay: 150ms;
 }
 
+/* headings */
+
+.heading-1 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  text-align: center;
+  --tw-text-opacity: 1;
+  color: rgba(0, 0, 0, var(--tw-text-opacity));
+}
+
+@media (min-width: 768px) {
+  .heading-1 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+}
+
 /* form inputs and labels */
 
 .label-1 {
@@ -32942,7 +32962,7 @@ video {
 
 .input-1:focus {
   --tw-border-opacity: 1;
-  border-color: rgba(231, 29, 54, var(--tw-border-opacity));
+  border-color: rgba(245, 158, 11, var(--tw-border-opacity));
 }
 
 .input-1 {
@@ -32997,6 +33017,58 @@ video {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 100ms;
   transition-delay: 75ms;
+}
+
+.green-btn {
+  --tw-bg-opacity: 1;
+  background-color: rgba(4, 120, 87, var(--tw-bg-opacity));
+}
+
+.green-btn:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(6, 78, 59, var(--tw-bg-opacity));
+}
+
+.green-btn {
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  --tw-text-opacity: 1;
+  color: rgba(253, 255, 252, var(--tw-text-opacity));
+  width: 100%;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 100ms;
+  transition-delay: 75ms;
+}
+
+/* boxes */
+
+.form-box-1 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(229, 231, 235, var(--tw-bg-opacity));
+  padding: 2rem;
+  --tw-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  width: 80%;
+}
+
+@media (min-width: 768px) {
+  .form-box-1 {
+    width: 66.666667%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .form-box-1 {
+    width: 33.333333%;
+  }
 }
 
 @media (min-width: 640px) {

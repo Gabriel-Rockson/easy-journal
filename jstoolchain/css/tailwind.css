@@ -49,6 +49,11 @@
     @apply text-tiffany-blue hover:text-orange-peel text-xl font-semibold transition delay-150 duration-300 ease-in-out;
 }
 
+/* headings */
+.heading-1 {
+    @apply text-2xl md:text-3xl font-bold text-center py-2 text-black;
+}
+
 
 /* form inputs and labels */
 .label-1 {
@@ -56,11 +61,20 @@
 }
 
 .input-1 {
-    @apply p-4 border-gray-300 focus:outline-none border-2 text-lg focus:border-rose-madder transition delay-75 duration-100 ease-linear;
+    @apply p-4 border-gray-300 focus:outline-none border-2 text-lg focus:border-yellow-500 transition delay-75 duration-100 ease-linear;
 }
 
 
 /* buttons */
 .blue-btn {
     @apply py-4 w-full bg-blue-700 hover:bg-blue-900 transition delay-75 duration-100 ease-in-out text-xl font-bold text-baby-powder;
+}
+
+.green-btn {
+    @apply py-4 w-full bg-green-700 hover:bg-green-900 transition delay-75 duration-100 ease-in-out text-xl font-bold text-baby-powder;
+}
+
+/* boxes */
+.form-box-1 {
+    @apply w-4/5 md:w-2/3 lg:w-1/3 p-8 bg-gray-200 shadow-2xl;
 }
