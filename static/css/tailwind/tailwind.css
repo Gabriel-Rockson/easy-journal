@@ -11237,6 +11237,14 @@ video {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
+.font-varela {
+  font-family: Varela, sans-serif;
+}
+
+.font-monserrat {
+  font-family: Montserrat, sans-serif;
+}
+
 .font-thin {
   font-weight: 100;
 }
@@ -42703,6 +42711,14 @@ video {
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
 
+  .sm\:font-varela {
+    font-family: Varela, sans-serif;
+  }
+
+  .sm\:font-monserrat {
+    font-family: Montserrat, sans-serif;
+  }
+
   .sm\:font-thin {
     font-weight: 100;
   }
@@ -73812,6 +73828,14 @@ video {
 
   .md\:font-mono {
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  }
+
+  .md\:font-varela {
+    font-family: Varela, sans-serif;
+  }
+
+  .md\:font-monserrat {
+    font-family: Montserrat, sans-serif;
   }
 
   .md\:font-thin {
@@ -104925,6 +104949,14 @@ video {
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
 
+  .lg\:font-varela {
+    font-family: Varela, sans-serif;
+  }
+
+  .lg\:font-monserrat {
+    font-family: Montserrat, sans-serif;
+  }
+
   .lg\:font-thin {
     font-weight: 100;
   }
@@ -136036,6 +136068,14 @@ video {
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
 
+  .xl\:font-varela {
+    font-family: Varela, sans-serif;
+  }
+
+  .xl\:font-monserrat {
+    font-family: Montserrat, sans-serif;
+  }
+
   .xl\:font-thin {
     font-weight: 100;
   }
@@ -167145,6 +167185,14 @@ video {
 
   .\32xl\:font-mono {
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  }
+
+  .\32xl\:font-varela {
+    font-family: Varela, sans-serif;
+  }
+
+  .\32xl\:font-monserrat {
+    font-family: Montserrat, sans-serif;
   }
 
   .\32xl\:font-thin {
