@@ -21,23 +21,23 @@
 <body style="height: 100vh;" class="flex flex-col">
     
     <!-- Navbar of the authentication templates  -->
-    <nav class="bg-white border-b-2 border-gray-200 shadow-sm font-raleway">
+    <nav class="shadow-md font-raleway bg-rich-black-fogra text-white">
         <!-- Outer container of the navbar -->
-        <div class="flex justify-between px-12 lg:px-32 py-3">
+        <div class="flex justify-between px-12 lg:px-32 py-4">
             <!-- Inner containers of the navbar-->
             <div class="flex items-center">
                 <!-- logo -->
-                <div class="text-xl mr-5"><a href="{% url 'home:home' %}"><span class="font-extrabold text-red-500">easy</span><span class="font-medium text-blue-900">JOURNAL</span></a></div>
+                <div class="text-xl md:text-2xl mr-5"><a href="{% url 'home:home' %}"><span class="font-extrabold">easy</span><span class="font-extrabold">JOURNAL</span></a></div>
                 <!-- primary nav -->
-                <div class="space-x-2">
+                <div class="space-x-2 text-lg">
                     <a href="#" class="acc-nav-link">home</a>
                     <a href="#" class="acc-nav-link">about</a>
                 </div>
             </div>
             <!-- secondary nav-->
-            <div class="items-center space-x-3">
+            <div class="items-center space-x-3 text-lg">
                 <a href="{% url 'account_login' %}" class="acc-nav-link">login</a>
-                <a href="{% url 'account_signup' %}" class="text-xl text-purple-500 hover:text-purple-700 font-bold">signup</a>
+                <a href="{% url 'account_signup' %}" class="text-xl">signup</a>
             </div>
         </div>
     </nav>
